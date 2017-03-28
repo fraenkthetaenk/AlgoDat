@@ -98,7 +98,6 @@ public class Main {
 		end = System.currentTimeMillis();
 		runtime = (end - start) / 1000.0;
 		System.out.println("Laufzeit für 2 sotierte Arrrays: " + runtime + "s.");
-
 	}
 
 }

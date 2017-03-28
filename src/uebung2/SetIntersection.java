@@ -1,5 +1,6 @@
 package uebung2;
 
+
 /**
  * This Class is used to count the appearance of the same integer in 2 different
  * integer Arrays depending on whether the input arrays are sorted or not
@@ -7,6 +8,9 @@ package uebung2;
  * @author frank
  *
  */
+
+
+
 public class SetIntersection {
 
 	/**
@@ -25,7 +29,6 @@ public class SetIntersection {
 			for (int value2 : unsorted2) {
 				if (value1 == value2) {
 					countSame++;
-					continue;
 				}
 			}
 		}
@@ -117,5 +120,4 @@ public class SetIntersection {
 		return count;
 
 	}
-
 }
