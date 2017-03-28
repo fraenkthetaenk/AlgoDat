@@ -29,6 +29,7 @@ public class SetIntersection {
 			for (int value2 : unsorted2) {
 				if (value1 == value2) {
 					countSame++;
+					continue;
 				}
 			}
 		}
