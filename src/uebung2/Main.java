@@ -21,6 +21,7 @@ public class Main {
 		meassureRuntime(100000);
 		meassureRuntime(1000000);
 		meassureRuntime(10000000);
+		
 
 	}
 
@@ -73,13 +74,18 @@ public class Main {
 	public static void meassureRuntime(int size) {
 
 		System.out.println("Zeitmessungen für Arrays mit " + size + " Elementen");
+		
+		int[] randomUnsorted1 = randomUnsorted(size);
+		int[] randomUnsorted2 = randomUnsorted(size);
+		int[] randomSorted1 = randomSorted(size);
+		int[] randomSorted2 = randomSorted(size);
 
 		long start;
 		long end;
 		double runtime;
 		if (size <= 1000000) {
 			start = System.currentTimeMillis();
-			SetIntersection.countIntersectionUnsorted(randomUnsorted(size), randomUnsorted(size));
+			SetIntersection.countIntersectionUnsorted(randomUnsorted1, randomUnsorted2);
 			end = System.currentTimeMillis();
 			runtime = (end - start) / 1000.0;
 			System.out.println("Laufzeit für 2 unsotierte Arrays: " + runtime + "s.");
@@ -88,13 +94,13 @@ public class Main {
 		}
 
 		start = System.currentTimeMillis();
-		SetIntersection.countIntersectionOneInputOrdered(randomUnsorted(size), randomSorted(size));
+		SetIntersection.countIntersectionOneInputOrdered(randomUnsorted1, randomSorted1);
 		end = System.currentTimeMillis();
 		runtime = (end - start) / 1000.0;
 		System.out.println("Laufzeit fur 1 sotiertes und 1 unsortiertes Array: " + runtime + "s.");
 
 		start = System.currentTimeMillis();
-		SetIntersection.countIntersectionOrdered(randomSorted(size), randomSorted(size));
+		SetIntersection.countIntersectionOrdered(randomSorted1, randomSorted2);
 		end = System.currentTimeMillis();
 		runtime = (end - start) / 1000.0;
 		System.out.println("Laufzeit für 2 sotierte Arrrays: " + runtime + "s.");
