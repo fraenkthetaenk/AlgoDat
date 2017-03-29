@@ -83,7 +83,7 @@ public class Main {
 		long start;
 		long end;
 		double runtime;
-		if (size <= 1000000) {
+		if (size < 1000000) {
 			start = System.currentTimeMillis();
 			SetIntersection.countIntersectionUnsorted(randomUnsorted1, randomUnsorted2);
 			end = System.currentTimeMillis();
