@@ -1,5 +1,7 @@
 package uebung3;
 
+import java.util.Arrays;
+
 /**
  * Implementierung einer Sequenz, bei der die Werte in einem Array abgelegt
  * werden, das bei Bedarf dynamisch vergrößert wird.
@@ -83,7 +85,6 @@ public class ArraySequence implements Sequence {
 		}
 		array[size] = val;
 		size++;
-
 	}
 
 	@Override
@@ -115,13 +116,6 @@ public class ArraySequence implements Sequence {
 	}
 
 	private void copyArrayToNewLarger() {
-		Object[] arrayNew = new Object[array.length + 1];
-		for (int i = 0; i < array.length; i++) {
-			arrayNew[i] = array[i];
-
-		}
-
-		array = arrayNew;
+		array = Arrays.copyOf(array, size*2);
 	}
-
 }
