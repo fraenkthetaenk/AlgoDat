@@ -94,6 +94,17 @@ public class ArraySequenceTest {
 		sut.addLast("B");
 		sut.delete(3);
 	}
+	
+	@Test
+	public void testMultipleAdditionAndDeletion() {
+		sut.addLast("A");
+		sut.addLast("B");
+		sut.delete(1);
+		sut.addLast("C");		
+		Assert.assertEquals(2, sut.size());
+		Assert.assertEquals("A", sut.get(0));
+		Assert.assertEquals("C", sut.get(1));
+	}
 
 	
 }
